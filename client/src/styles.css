@@ -1,0 +1,43 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  padding: 16px 16px;
+  margin-bottom: 32px;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+}
+
+.no-autofillers {
+  color: pink;
+  
+}
+
+.autofillers {
+  border: 1px solid #999;
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  max-height: 143px;
+  overflow-y: auto;
+  padding-left: 0;
+  width: calc(300px + 1rem);
+}
+
+.autofillers li {
+  padding: 0.5rem;
+}
+
+.autofill-active,
+.autofillers li:hover {
+  background-color: pink;
+  color: black;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.autofillers li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+}

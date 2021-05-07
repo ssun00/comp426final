@@ -18,3 +18,7 @@ app.get("/api", (req, res) => {
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
+
+app.post('/addUser/:email', (req, res) => {
+  res.json({message: req.params});
+})

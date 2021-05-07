@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-import React from 'react'
+import Home from './Pages';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import SignInPage from './Pages/SignIn';
+import SignUpPage from './Pages/SignUp';
 
 function App() {
-  const [data, setData] = React.useState(null);
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {!data ? "Loading..." : data}
-        </p>
-        
-      </header>
-    </div>
+   <Router>
+     <Switch>
+      <Route path="/" component={Home} exact />
+      <Route path="/SignIn" component={SignInPage} exact />
+      <Route path="/SignUp" component={SignUpPage} exact />
+     </Switch>
+   </Router>
   );
 }
 

@@ -1,0 +1,15 @@
+export const aboutUs = {
+  id: 'about',
+  lightBg: false,
+  lightText: true,
+  lightTextDesc: true,
+  topLine: 'ABOUT US',
+  headline: "UNC AASA",
+  description: 'shpeal about unc aasa things like who we are, when we were established, our goals, what we do, some cool facts shiet',
+  buttonLabel: 'Learn more',
+  imgStart: false,
+  dark: true,
+  alt: 'photo of aasa',
+  primary: true,
+  darkText: false,
+}
