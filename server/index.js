@@ -1,9 +1,20 @@
 const path = require('path');
 const express = require("express");
 
+const mysql = require("mysql");
+const dbConfig = require("../db.config");
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+
+
+var connection = mysql.createPool({
+  host: dbConfig.HOST,
+  user: dbConfig.USER,
+  password: dbConfig.PASSWORD,
+  database: dbConfig.DB
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
@@ -22,3 +33,5 @@ app.get('*', (req, res) => {
 app.post('/addUser/:email', (req, res) => {
   res.json({message: req.params});
 })
+
+module.exports = connection;
