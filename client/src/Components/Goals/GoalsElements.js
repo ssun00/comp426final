@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const GoalsContainer = styled.div`
+export const Container = styled.div`
   height: 800px;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@ export const GoalsContainer = styled.div`
     height: 1300px;
   }
 `
-export const GoalsWrapper = styled.div`
+export const Wrapper = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   display: grid;
@@ -35,7 +35,7 @@ export const GoalsWrapper = styled.div`
   }
 `
 
-export const GoalsCard = styled.div`
+export const Card = styled.div`
   background: #F6F2ED;
   display: flex;
   flex-direction: column;
@@ -54,13 +54,13 @@ export const GoalsCard = styled.div`
   }
 `
 
-export const GoalsIcon = styled.img`
+export const Icon = styled.img`
   height: 160px;
   width: 160px;
   margin-bottom: 10px;
 `
 
-export const GoalsH1 = styled.h1`
+export const Heading1 = styled.h1`
   font-size: 40px;
   font-weight: bold;
   color: white;
@@ -71,14 +71,14 @@ export const GoalsH1 = styled.h1`
   }
 `
 
-export const GoalsH2 = styled.h2`
+export const Heading2 = styled.h2`
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 10px;
   color: #f06292;
 `
 
-export const GoalsP = styled.p`
+export const Subtitle = styled.p`
   font-size: 15px;
   text-align: center;
   color: black;

@@ -125,3 +125,11 @@ export const Text = styled(Link)`
   color: black;
   font-size: 14px;
 `;
+
+export const ErrorLogin = styled.div`
+  text-align: center;
+  margin-top: 24px;
+  color: red;
+  font-size: 14px;
+  border-radius: 4px;
+`

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ExecContainer = styled.div`
+export const Container = styled.div`
   height: 1400px;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ export const Heading = styled.h1`
   }
 `;
 
-export const ExecWrapper = styled.div`
+export const Wrapper = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   display: grid;
@@ -65,7 +65,7 @@ export const ExecWrapper = styled.div`
   }
 `
 
-export const ExecCard = styled.div`
+export const Card = styled.div`
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -83,13 +83,13 @@ export const ExecCard = styled.div`
   }
 `
 
-export const ExecImg = styled.img`
+export const Img = styled.img`
   height: 160px;
   width: 160px;
   margin-bottom: 10px;
 `
 
-export const ExecH2 = styled.h1`
+export const Heading2 = styled.h1`
   font-size: 1rem;
   color: black;
   margin-bottom: 10px;
@@ -99,7 +99,7 @@ export const ExecH2 = styled.h1`
   }
 `
 
-export const ExecP = styled.h2`
+export const Subtitle = styled.h2`
   font-size: 1rem;
   margin-bottom: 10px;
   color: #f06292;

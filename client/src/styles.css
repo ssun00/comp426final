@@ -10,7 +10,7 @@ input {
   border-radius: 4px;
 }
 
-.no-autofillers {
+.has-no-autofill {
   color: pink;
   
 }
@@ -19,10 +19,7 @@ input {
   border: 1px solid #999;
   border-top-width: 0;
   list-style: none;
-  margin-top: 0;
   max-height: 143px;
-  overflow-y: auto;
-  padding-left: 0;
   width: calc(300px + 1rem);
 }
 
@@ -30,7 +27,7 @@ input {
   padding: 0.5rem;
 }
 
-.autofill-active,
+.has-autofill,
 .autofillers li:hover {
   background-color: pink;
   color: black;
@@ -39,5 +36,5 @@ input {
 }
 
 .autofillers li:not(:last-of-type) {
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid black;
 }

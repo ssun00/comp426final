@@ -1,42 +1,47 @@
-import React from 'react'
-import $ from 'jquery'
+// Code styling based on https://www.youtube.com/watch?v=Nl54MJDR2p8&t=11559s
+
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {animateScroll as scroll} from 'react-scroll'
 import {FaFacebook, FaInstagram, FaYoutube} from 'react-icons/fa'
 import {
-  FooterContainer,
-  FooterWrap,
-  // FooterLinksWrapper,
-  // FooterLinksContainer,
-  // FooterLinkItem,
-  // FooterLinkTitle,
-  // FooterLink,
+  Container,
+  Wrap,
   SocialMedia,
   SocialMediaWrap,
   SocialLogo,
   WebsiteRights,
   SocialIconLink,
   SocialIcons,
+  Clock
 } from './FooterElements'
 
 const Footer = () => {
   const toggleHome = () => {
     scroll.scrollToTop();
   };
-  loadClock();
+
+  const [clock, setClock] = useState(loadClock);
+  
+  async function loadClock() {
+    const clock = await axios({
+      method: 'get',
+      url: 'http://worldtimeapi.org/api/ip'
+    });
+    const getDate = clock.data.datetime;
+  
+    setClock({
+      date: getDate
+    });
+  }
+
+  useEffect(() => {
+    loadClock();
+  }, []);
 
   return (
-    <FooterContainer>
-      <FooterWrap>
-        {/* <FooterLinksContainer>
-          <FooterLinksWrapper>
-            <FooterLinkItem>
-              <FooterLinkTitle>Contact Us</FooterLinkTitle>
-                <FooterLink to="/QuestionForm">Have Questions?</FooterLink>
-                <FooterLink to="/">Email Us</FooterLink>
-            </FooterLinkItem>
-          </FooterLinksWrapper>
-        </FooterLinksContainer> */}
+    <Container>
+      <Wrap>
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to="/" onClick={toggleHome}>
@@ -56,22 +61,10 @@ const Footer = () => {
             </SocialIcons>
           </SocialMediaWrap>
         </SocialMedia>
-
-        
-      </FooterWrap>
-    </FooterContainer>
+      </Wrap>
+      <Clock>{clock.date}</Clock>
+    </Container>
   )
-}
-
-async function loadClock() {
-  const $root = $('#root');
-  const clock = await axios({
-    method: 'get',
-    url: 'http://worldtimeapi.org/api/ip'
-  });
-  console.log(clock);
-  const dateTime = clock.data.datetime;
-  $root.append(dateTime);
 }
 
 export default Footer

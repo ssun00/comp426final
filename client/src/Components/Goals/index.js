@@ -1,45 +1,47 @@
+// Code styling based on https://www.youtube.com/watch?v=Nl54MJDR2p8&t=11559s
+
 import React from 'react'
 import {Button} from '../ButtonElements'
 import {
-  GoalsContainer,
-  GoalsH1,
-  GoalsH2,
-  GoalsWrapper,
-  GoalsCard,
-  GoalsP,
+  Container,
+  Heading1,
+  Heading2,
+  Wrapper,
+  Card,
+  Subtitle,
   BtnWrap
 } from './GoalsElements'
 
 const Goals = () => {
   return (
 
-    <GoalsContainer id='goals' smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass="active">
-      <GoalsH1>our goals</GoalsH1>
-      <GoalsWrapper>
-        <GoalsCard>
-          <GoalsH2>reduce expenses</GoalsH2>
-          <GoalsP>help reduce feeds and increase overall revenue</GoalsP>
-        </GoalsCard>
+    <Container id='goals' smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass="active">
+      <Heading1>Our Goals</Heading1>
+      <Wrapper>
+        <Card>
+          <Heading2>Collaborations</Heading2>
+          <Subtitle>More organization collaborations (at UNC, outside of UNC, etc.)</Subtitle>
+        </Card>
 
-        <GoalsCard>
-          <GoalsH2>waefaew</GoalsH2>
-          <GoalsP>awhaowijefoiawjge</GoalsP>
-        </GoalsCard>
+        <Card>
+          <Heading2>Relationships</Heading2>
+          <Subtitle>Closer relationships between Exec and Leadership</Subtitle>
+        </Card>
 
-        <GoalsCard>
-          <GoalsH2>waefaew</GoalsH2>
-          <GoalsP>awhaowijefoiawjge</GoalsP>
-        </GoalsCard>
+        <Card>
+          <Heading2>Inclusion</Heading2>
+          <Subtitle>Focus on whole Asia and make AASA more inclusive for S & SE Asians</Subtitle>
+        </Card>
 
-        <GoalsCard>
-          <GoalsH2>reduce expenses</GoalsH2>
-          <GoalsP>help reduce feeds and increase overall revenue</GoalsP>
-        </GoalsCard>
-      </GoalsWrapper>
+        <Card>
+          <Heading2>Engagement</Heading2>
+          <Subtitle>More engagement with General Body members</Subtitle>
+        </Card>
+      </Wrapper>
       <BtnWrap>
           <Button to='exec' smooth={true} duration={500} spy={true} exact="true" offset={-80} primary={true} dark={true}>Check out our Exec!</Button>
         </BtnWrap>
-    </GoalsContainer>
+    </Container>
   );
 ;}
 

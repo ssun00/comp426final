@@ -1,17 +1,21 @@
+// Code styling based on https://www.youtube.com/watch?v=Nl54MJDR2p8&t=11559s
+
 import React, {useState, useEffect} from 'react';
 import {animateScroll as scroll} from 'react-scroll';
 import {IconContext} from 'react-icons/lib'
+import { useAuth } from '../../useAuth.js'
 import {FaBars} from 'react-icons/fa';
 import {
   Nav, 
-  NavbarContainer, 
-  NavLogo, 
-  NavItem, 
-  NavLinks, 
-  NavMenu, 
-  NavBtn, 
-  NavBtnLink,
-  MobileIcon
+  Container, 
+  Logo, 
+  Item, 
+  Links, 
+  Menu, 
+  Btn, 
+  BtnLink,
+  MobileIcon,
+  HiddenLink
 } from './NavbarElements';
 
 const Navbar = ({toggle}) => {
@@ -34,33 +38,38 @@ const Navbar = ({toggle}) => {
     scroll.scrollToTop();
   };
 
+  const auth = useAuth();
+
+
   return (
     <>
     <IconContext.Provider value={{color: 'black'}}>
       <Nav scrollNav={scrollNav}>
-        <NavbarContainer>
-          <NavLogo to="/" onClick={toggleHome}>unc aasa.</NavLogo>
+        <Container>
+          <Logo to="/" onClick={toggleHome}>unc aasa.</Logo>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
-          <NavMenu>
-            <NavItem>
-              <NavLinks to='about' smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass="active">ABOUT</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="events" smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass="active">EVENTS</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="resources" smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass="active">RESOURCES</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="shop" smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass="active">SHOP</NavLinks>
-            </NavItem>
-          </NavMenu>
-          <NavBtn>
-            <NavBtnLink to="/signin">Sign In</NavBtnLink>
-          </NavBtn>
-        </NavbarContainer>
+          <Menu>
+            <Item>
+              <Links to='about' smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass="active">ABOUT</Links>
+            </Item>
+            <Item>
+              <Links to="events" smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass="active">EVENTS</Links>
+            </Item>
+            <Item>
+              <Links to="shop" smooth={true} duration={500} spy={true} exact='true' offset={-80} activeClass="active">SHOP</Links>
+            </Item>
+            {auth.user ? (
+              <Item>
+                <HiddenLink to="/wholesome">WHOLESOME</HiddenLink>
+                <BtnLink onClick={() => auth.signout()}>Sign Out</BtnLink>
+              </Item>
+            ) : (<Btn>
+              <BtnLink to="/signin">Sign In</BtnLink>
+            </Btn>)}
+          </Menu>
+        </Container>
       </Nav>
       </IconContext.Provider>
     </>

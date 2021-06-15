@@ -1,5 +1,7 @@
+// Code styling based on https://www.youtube.com/watch?v=Nl54MJDR2p8&t=11559s
+
 import React from 'react'
-import Autocomplete from '../Autocomplete'
+import Autofill from '../Autofill'
 import { 
   FormContent, 
   FormWrap,
@@ -13,8 +15,10 @@ import {
   FormButton,
   IconContainer
 } from './SignUpElements'
+import { useAuth } from '../../useAuth.js'
+import { useHistory } from "react-router-dom";
 
-export default class SignUp extends React.Component {
+class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,6 +34,7 @@ export default class SignUp extends React.Component {
   }
 
   handleGradChange(event) {
+
     this.setState({
       gradYear: event.target.value
     });
@@ -50,7 +55,6 @@ export default class SignUp extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state);
-
     const options = {
       method: 'POST',
       headers: { 
@@ -63,7 +67,10 @@ export default class SignUp extends React.Component {
         gradYear: parseInt(this.state.gradYear, 10)
       })
     };
-    fetch('/addUser', options);
+    fetch('/addUser', options)
+      .then(response => response.json())
+      .then(data => this.props.auth.signin(data.username))
+      .then(_ => this.props.history.push("/"));
   }
   
   render() {
@@ -79,13 +86,13 @@ export default class SignUp extends React.Component {
             <FormH1>Sign Up</FormH1>
 
             <FormLabel htmlFor="for">Graduation Year</FormLabel>
-            <Autocomplete id="gradYear" name="gradYear" value={this.state.gradYear} onChange={this.handleGradChange} autofillers={["2025", "2024", "2023", "2022"]} />
+            <Autofill id="gradYear" name="gradYear" value={this.state.gradYear} onChange={this.handleGradChange} autofillers={["2025", "2024", "2023", "2022"]} />
             
             <FormLabel htmlFor="for">Email</FormLabel>
             <FormInput type="text" id="email" value={this.state.email} onChange={this.handleEmailChange} required />
 
             <FormLabel htmlFor="for">Password</FormLabel>
-            <FormInput name="password" value={this.state.password} onChange={this.handlePasswordChange.bind(this)} type="text" />
+            <FormInput name="password" value={this.state.password} onChange={this.handlePasswordChange.bind(this)} type="password" />
 
             <FormButton type="submit" value="Submit Form">Continue</FormButton>
             <Text to="/signin">Already Have An Account</Text>
@@ -97,3 +104,12 @@ export default class SignUp extends React.Component {
   }
 }
 
+function withSignUpHook(SignUp) {
+  return function WrappedSignUpComponent(props) {
+    const auth = useAuth();
+    let history = useHistory();
+    return <SignUp {...props} auth={auth} history={history} />;
+  }
+}
+
+export default withSignUpHook(SignUp);

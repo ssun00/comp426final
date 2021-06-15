@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const InfoContainer = styled.div`
+export const Container = styled.div`
   color: #fff;
   background: white; 
 
@@ -9,7 +9,7 @@ export const InfoContainer = styled.div`
   }
 `;
 
-export const InfoWrapper = styled.div`
+export const Wrapper = styled.div`
   display: grid;
   z-index: 1;
   height: 860px;
@@ -21,7 +21,7 @@ export const InfoWrapper = styled.div`
   justify-content: center;
 `;
 
-export const InfoRow = styled.div`
+export const Row = styled.div`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
@@ -87,11 +87,10 @@ export const BtnWrap = styled.div`
 
 export const ImgWrap = styled.div`
   max-width: 555px;
-  height: 100%;
+  box-shadow: 20px 20px pink;
 `;
 
 export const Img = styled.img`
   width: 100%;
-  margin: 0 0 10px 0;
-  padding-right: 0;
+  height: 100%;
 `;

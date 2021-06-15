@@ -7,57 +7,58 @@ import angelina from '../../Images/angelina.jpg';
 import gao from '../../Images/gao.jpg';
 import molly from '../../Images/molly.jpg';
 import gwen from '../../Images/gwen.JPG';
+import hannah from '../../Images/hannah.jpg';
 
 export const execData = [
   {
     img: katrina,
-    h2: 'Katrina',
-    p: 'President'
+    heading2: 'Katrina',
+    subtitle: 'President'
   },
   {
     img: andy,
-    h2: 'Andy',
-    p: 'Vice President'
+    heading2: 'Andy',
+    subtitle: 'Vice President'
   },
   {
     img: sophies,
-    h2: 'Sophie Sun',
-    p: 'Design Chair'
+    heading2: 'Sophie Sun',
+    subtitle: 'Design Chair'
   },
   {
     img: molly,
-    h2: 'Molly Moran',
-    p: 'Political Chair'
+    heading2: 'Molly Moran',
+    subtitle: 'Political Chair'
   },
   {
     img: sophiej,
-    h2: 'Sophie Jiang',
-    p: 'Treasurer'
+    heading2: 'Sophie Jiang',
+    subtitle: 'Treasurer'
   },
   {
-    img: sophiej,
-    h2: 'Hannah',
-    p: 'Historian'
+    img: hannah,
+    heading2: 'Hannah',
+    subtitle: 'Historian'
   },
   {
     img: angelina,
-    h2: 'Angelina Su',
-    p: 'Publicity Chair'
+    heading2: 'Angelina Su',
+    subtitle: 'Publicity Chair'
   },
   {
     img: gao,
-    h2: 'Gaomomee',
-    p: 'Special Events'
+    heading2: 'Gaomomee',
+    subtitle: 'Special Events'
   },
   {
     img: gwen,
-    h2: 'Gwen Lau',
-    p: 'Co-Cultural Chair'
+    heading2: 'Gwen Lau',
+    subtitle: 'Co-Cultural Chair'
   },
   {
     img: aida,
-    h2: 'Aida',
-    p: 'Logistics Chair'
+    heading2: 'Aida',
+    subtitle: 'Logistics Chair'
   },
 
 ]

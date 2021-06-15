@@ -5,7 +5,7 @@ export const aboutUs = {
   lightTextDesc: true,
   topLine: 'ABOUT US',
   headline: "UNC AASA",
-  description: 'shpeal about unc aasa things like who we are, when we were established, our goals, what we do, some cool facts shiet',
+  description: "The purpose of UNC's Asian American Students Association is to advance the interests and needs of UNC’s Asian/Asian-American student population by providing members with the resources and opportunities to define for themselves the Asian American’s role as part of American culture.",
   buttonLabel: 'Learn more',
   imgStart: false,
   dark: true,

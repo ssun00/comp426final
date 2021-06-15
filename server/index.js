@@ -31,10 +31,6 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
-
 app.post('/addUser', (req, res) => {
   console.log("halp");
   const username = req.body.username;
@@ -54,5 +50,32 @@ app.post('/addUser', (req, res) => {
       return console.error(error.message);
     }
     console.log(results);
+    return res.send({"username": username});
   });
+});
+
+app.get('/getUser', (req, res) => {
+  const username = req.query.username;
+  const password = req.query.password;
+  console.log('called endpoint');
+  console.log(password);
+
+  const query = `
+    SELECT *
+    FROM users
+    WHERE email = 
+  ` + mysql.escape(username) + ` AND password = ` + mysql.escape(password);
+
+  connection.query(query, (error, results, fields) => {
+    if (error) {
+      return res.send('{"success": false, "error": true}');
+    } 
+    console.log(results.length)
+    if (results.length == 0) {
+      return res.send('{"success": false, "error": false}');
+    }
+    return res.send('{"success": true, "error": false}');
+  });
+  console.log(query);
+
 });

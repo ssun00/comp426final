@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Navbar from '../Components/Navbar';
 import Sidebar from '../Components/Sidebar';
-import HeroSection from '../Components/HeroSection';
+import Intro from '../Components/Intro';
 import InfoSection from '../Components/InfoSection';
 import { aboutUs } from '../Components/InfoSection/data';
 import Goals from '../Components/Goals';
@@ -23,7 +23,7 @@ const Home = () => {
     <>
     <Sidebar isOpen={isOpen} toggle={toggle} />
     <Navbar toggle={toggle} />
-    <HeroSection />
+    <Intro />
     <InfoSection {...aboutUs} />
     <Goals />
     <Exec data={execData} />

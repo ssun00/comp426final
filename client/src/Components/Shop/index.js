@@ -1,37 +1,44 @@
+// Code styling based on https://www.youtube.com/watch?v=GlROncAX4XI&t=3488s
+
 import React from 'react'
 import {
-  ShopContainer,
-  ShopWrapper,
-  ShopHeading,
-  ShopTitle,
-  ShopImg,
-  ShopCard,
-  ShopInfo,
-  ShopDesc,
-  ShopPrice,
-  ShopButton
+  Container,
+  Wrapper,
+  Heading,
+  Title,
+  Img,
+  Card,
+  Info,
+  Desc,
+  Price,
+  Button,
+  Link
 } from './ShopElements'
 
 const Shop = ({heading, data}) => {
   return (
-    <ShopContainer id="shop">
-      <ShopHeading>{heading}</ShopHeading>
-      <ShopWrapper>
+    <Container id="shop">
+      <Heading>{heading}</Heading>
+      <Wrapper>
         {data.map((product, index) => {
           return (
-            <ShopCard key={index}>
-              <ShopImg src={product.img} alt={product.alt} />
-              <ShopInfo>
-                <ShopTitle>{product.name}</ShopTitle>
-                <ShopDesc>{product.desc}</ShopDesc>
-                <ShopPrice>{product.price}</ShopPrice>
-                <ShopButton>{product.button}</ShopButton>
-              </ShopInfo>
-            </ShopCard>
+            <Card key={index}>
+              <Img src={product.img} alt={product.alt} />
+              <Info>
+                <Title>{product.name}</Title>
+                <Desc>{product.desc}</Desc>
+                <Price>{product.price}</Price>
+                <Button>
+                  <Link href="https://forms.gle/TawYJ9Hvkci9VrJa8" target="_blank">
+                    {product.button}
+                  </Link>
+                </Button>
+              </Info>
+            </Card>
           )
         })}
-      </ShopWrapper>
-    </ShopContainer>
+      </Wrapper>
+    </Container>
   )
 }
 

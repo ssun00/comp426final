@@ -1,38 +1,40 @@
+// Code styling based on https://www.youtube.com/watch?v=Nl54MJDR2p8&t=11559s
+
 import React from 'react'
 import {
-  ExecContainer,
+  Container,
   TextWrapper,
   TopLine,
   Heading,
-  ExecWrapper,
-  ExecCard,
-  ExecImg,
-  ExecH2,
-  ExecP
+  Wrapper,
+  Card,
+  Img,
+  Heading2,
+  Subtitle
 } from './ExecElements'
 
 const Exec = ({data}) => {
   return (
     <>
-    <ExecContainer id="exec">
+    <Container id="exec">
       <TextWrapper>
         <TopLine>2021-2022</TopLine>
         <Heading>Exec Board</Heading>
       </TextWrapper>
-      <ExecWrapper>
+      <Wrapper>
         {data.map((pic, index) => {
           return (
-            <ExecCard key={index}>
-              <ExecImg src={pic.img} />
-              <ExecH2>{pic.h2}</ExecH2>
-              <ExecP>{pic.p}</ExecP>
-            </ExecCard>
+            <Card key={index}>
+              <Img src={pic.img} />
+              <Heading2>{pic.heading2}</Heading2>
+              <Subtitle>{pic.subtitle}</Subtitle>
+            </Card>
 
           )
         })}
       
-      </ExecWrapper>
-    </ExecContainer>
+      </Wrapper>
+    </Container>
     </>
   );
 };

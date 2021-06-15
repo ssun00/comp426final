@@ -1,9 +1,12 @@
+// Code styling based on https://www.youtube.com/watch?v=Nl54MJDR2p8&t=11559s
+
 import React from 'react';
 import {Button} from '../ButtonElements'
+import aasa from '../../Images/aasa.jpg';
 import {
-  InfoContainer,
-  InfoWrapper,
-  InfoRow,
+  Container,
+  Wrapper,
+  Row,
   Column1,
   Column2,
   TextWrapper,
@@ -12,13 +15,14 @@ import {
   Subtitle,
   BtnWrap,
   ImgWrap,
+  Img
 } from './InfoSectionElements';
 
-const InfoSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, alt}) => {
+const InfoSection = ({id, imgStart, topLine, headline, description, buttonLabel}) => {
   return (
-      <InfoContainer id={id}>
-        <InfoWrapper>
-          <InfoRow imgStart={imgStart}>
+      <Container id={id}>
+        <Wrapper>
+          <Row imgStart={imgStart}>
             <Column1>
             <TextWrapper>
               <TopLine>{topLine}</TopLine>
@@ -31,11 +35,12 @@ const InfoSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkT
             </Column1>
             <Column2>
               <ImgWrap>
+                <Img src={aasa} />
               </ImgWrap>
             </Column2>
-          </InfoRow>
-        </InfoWrapper>
-      </InfoContainer>
+          </Row>
+        </Wrapper>
+      </Container>
   );
 };
 

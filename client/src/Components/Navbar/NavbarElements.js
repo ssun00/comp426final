@@ -19,7 +19,7 @@ export const Nav = styled.nav`
   }
 `;
 
-export const NavbarContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -29,7 +29,7 @@ export const NavbarContainer = styled.div`
   max-width: 1100px;
 `;
 
-export const NavLogo = styled(LinkR)`
+export const Logo = styled(LinkR)`
   color: black;
   justify-self: flex-start;
   cursor: pointer;
@@ -41,7 +41,7 @@ export const NavLogo = styled(LinkR)`
   text-decoration: none;
 `;
 
-export const NavMenu = styled.ul`
+export const Menu = styled.ul`
   display: flex;
   justify-content: center;
   list-style: none;
@@ -53,11 +53,11 @@ export const NavMenu = styled.ul`
   }
 `;
 
-export const NavItem = styled.li`
+export const Item = styled.li`
   height: 80px;
 `;
 
-export const NavLinks = styled(LinkS)`
+export const Links = styled(LinkS)`
   color: black;
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@ export const NavLinks = styled(LinkS)`
   }
 `;
 
-export const NavBtn = styled.nav`
+export const Btn = styled.nav`
   display: flex;
   align-items: center;
 
@@ -81,7 +81,22 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const NavBtnLink = styled(LinkR)`
+export const HiddenLink = styled(LinkR)`
+  color: black;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  font-weight: bold;
+
+  &.active {
+    border-bottom: 3px solid #f06292;
+  }
+`
+
+export const BtnLink = styled(LinkR)`
   border-radius: 50px;
   background: black;
   white-space: nowrap;

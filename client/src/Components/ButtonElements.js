@@ -1,3 +1,5 @@
+// Code styling based on https://www.youtube.com/watch?v=Nl54MJDR2p8&t=11559s
+
 import styled from 'styled-components';
 import {Link} from 'react-scroll';
 
